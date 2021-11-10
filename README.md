@@ -3,16 +3,12 @@ In this project we have Convolutional Neural Networks(CNN) to train a model that
 
 
 ## Team Members
-1. JASWANTH S (18BME0209)
-2. MOHANRAJ A (18BME0355)
-3. RANGANATHAN S V (18BME0374)
-4. JAHAN (19BAI1042)
+1. SRI HARSHITHA YANNAM (18UK1A05M7)
+2. SAI DEEPAK POSHALA (18UK1A05L6)
+3. SUDEEPA REDDY THOUTA (18UK1A05M4)
+4. DIVYA VUPPULA (18UK1A05J0)
 
-## Demo Video Link
-https://drive.google.com/drive/folders/1_2QvQk3TVpDAfBzHIAi2-hMVSDakY-ek?usp=sharing
 
-## Project Drive Link
-https://drive.google.com/drive/folders/10hJB3hAJvatSe2V1SL279t-BC-rgY4uc?usp=sharing
 
 ## Libraries Used
 - Tensorflow
