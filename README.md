@@ -30,5 +30,11 @@ In this project we have Convolutional Neural Networks(CNN) to train a model that
 - Visual Studio Code
 "# SI-GuidedProject-5702-1634101148" 
 
+
+
 ## Google drive link with video demonstration video
 https://drive.google.com/file/d/1HYvZqUeMZMt48I1grdlEwlv6ocDAcsHF/view?usp=sharing
+
+
+## Google drive link
+https://drive.google.com/drive/folders/1mTKyFA3-lSzj-WRze_s4HdFKu0n5b0NI?usp=sharing
