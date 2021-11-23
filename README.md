@@ -29,3 +29,6 @@ In this project we have Convolutional Neural Networks(CNN) to train a model that
 - Spyder
 - Visual Studio Code
 "# SI-GuidedProject-5702-1634101148" 
+
+## Google drive link with video demonstration video
+https://drive.google.com/file/d/1HYvZqUeMZMt48I1grdlEwlv6ocDAcsHF/view?usp=sharing
