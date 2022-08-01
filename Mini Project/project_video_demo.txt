@@ -1,0 +1,244 @@
+Harshitha introduction and ppt
+
+Greetings everyone.  welcome to the video demonstration of our mini project "deep learning techniques for breast cancer risk prediction using ibm cloud". myself Sri harshitha yannam currently pursuing my undergraduation in the stream of computer science engineering department, final year at vaagdevi engineering college in warangal.
+
+my team mates 
+yannam sri harshitha
+thouti reddy sudeepa
+poshala sai deepak
+vuppula divya
+
+let me explain briefly about my mini project with the help of this presentation. by the end of this presentation you will be able to learn about the problem statement, introduction, procedure followed, solution for the problem statement, final output and the summary of our project.
+
+firstly, the Problem statement of our mini project is to predict the breast cancer using deep learning techniques with the histopathological images. here for predicting the breast cancer we are using two classes or types named "malignant" and "benign". breast cancer is one of the main causes of cancer deadth worldwide. Computer-aided diagnosis systems showed the potential for improving diagnostic accuracy. But early detection and prevention can significantly reduce the chances of death. It is important to detect breast cancer as early as possible. as early diagnostics significantly increases the chance sof correct treatment and survival. in this application, we are helping the doctors and patients to classify the Type of tumor for the specific image given with the help of Neural Networks which is a deep learning technique.
+
+introduction of the project, in this introduction first let us know what is breast cancer: Breast Cancer is a type of cancer that starts in the breast. Breast cancer occurs almost entirely in women, but men can get breast cancer, too. Breast cancer cells usually form a tumor that can often be seen on an x-ray or felt as a lump. Non-Cancerous breast tumors are abnormal growths, but they do not spread outside of the breast. They are not life threating, but some types of benign breast lumps can increase a woman’s risk of getting breast cancer. Any breast lump or change needs to be checked by a health care professional to determine if it is benign or malignant(cancer) and if it might affect your future cancer risk. For this type of future risk prediction we use this kind of Breast Cancer Prediction using Histopathological Images with Deep Learning Techniques.
+
+
+Procedure followed to develop this project, firstly we need to collect the dataset which consists of histopathological images as per the requirement. secondly, build a model to train and test the images using convolutional neural network. Now, integrate the model built with flask in python file. next, create the html for designing a webpage. finally, displaying the prediction in the webpage by selecting an histopathological image. 
+
+solution for the problem statemnet is generally Breast cancer starts when cells in the breast begin to grow out of control. These cells usually form a tumor that can often be seen on an x-ray or felt as a lump. The tumor is malignant (cancer) if the cells can grow into (invade) surrounding tissues or spread (metastasize) to distant areas of the body. A convolution neural network (CNN) method is proposed in this study to boost the automatic identification of breast cancer by analyzing the Histopathological images. CNNs are applied to explore patterns in an image. CNNs are very effective at detecting objects in images. The proposed system uses CNNs to detect breast cancer from breast tissue images. The architecture of a CNN has 3 main layers, the convolutional layer, pooling layer, and fully connected layer. The first layer calculates the output of neurons which are linked with local regions. Each one is calculated by a dot product of weights and the region. For image inputs, typical filters are small in area such as 3 × 3. Pooling layer uses multiple filters to detect specific patterns which are in common. Pooling layer reduces number of parameters and dimensionality. Flatten layer is the process of converting all resultant 2 dimensional arrays from pooled featured map to a single long continuous linear vector. Further this flattened matrix from flatten layer is fed as input to fully connected layer to classify the image. After Classifying the image the further prediction is done in webpage by uploading an histopathology image which is trained previously in Convolutional Neural Network.
+
+here is the output, after designing the html code, the first webpage we can see is like this which is describing about the breast cancer prediction with some styles displaying the background image, a button for choosing the histopathology image and an upload button is designed for predict the breast cancer when the upload button is selected. 
+
+when the image is selected and uploaded, we can see the prediction describing about the type of breast cancer. here we can see that the image is being predicted as malignant type of breast cancer and describing that your tissues have breast cancer malignant consult a doctor immediately.
+
+similarly when we upload another image of another type we can see that the model is predicting that you are free from breast cancer of type benign. in this way our model is successfully predicting the bresat cancer type.
+
+let's conclude, the summary: initially our problem statement is to preidt the risk of breast cancer using deep learning techniques. for that we developed  a solution by colecting the dataset consists of histopathological images of breast cancer. next, we have developed which is used for training and testing the images using convolutional neural network which made us to classify the type of breast cancer i.e. malignant or benign type. further we used flask in python for integrating the model and rendered to the html pages for prediction of breast cancer in a webpage. in this we have predicted the type of breast cancer.
+
+
+
+
+
+
+
+
+
+harshitha code explanation
+
+now, lets try to undestand the coding part for building the model using convolutional neural network in gogle colaboratory. 
+firstly before building the model, collecting the dataset is required. so we have collected our dataset and uploaded into google drive.
+let's start the coding phase explanation, as the dtaset is uploaded to the google drive we must mount the google drive to the google colab. for that we used this piece of code which is mounting the google drive.
+
+next, import requied models, layers and modules from keras and tensorflow libraries. keras is a neural network library while tensorflow is the open source library for a number of various tasks in machine learning. here we have imported sequential model, dense layer, convolution2d layer, maxpooling layer, flatten layer and image data generator for prepressing the image.
+
+by using image data generator for preprocessing the images in training and testing data we are using rescaling, shear range, zoom range, horizontal flip, these attributes can transform the changes in an image.
+
+whatever the dataset is mounted from google drive is now accessed by copying its path and given to x_train and x_test variables with a taraget size of 32 by 32 and batch size of 32 with a binary class mode. after running it we can see that images are found belonging to 2 classes in both training and testing set. here the 2 classes are benign with class 0 and malignant with class 1.
+
+now we are initializing the model by callling the sequential model and declared with a variable detector. sequential is the easiest way to build  amodel in keras. it alllows to build a model, layer by layer. we use add() function to add layers to our model.
+
+now we are adding a convolutiona2d layer to our model with batch size 32, and matrix filter of 3 by 3 with input shape 32, 32, 3. a convolution layer is used for a matrix filter and to perform convolution opeartion to detect patterns in the image.
+
+next we add the maxpooling2d layer is used for filtering and reducing the dimensionality of  afeatured map from 3 by 3 matrix to 2 by 2 matrix with some common conditions and evaluates the common patetrns. 
+
+in this way we add convolution2d and maxpooling layers for 3 times into our model. next we add the flatten layer. flatten layer is used to transform the 2 dimensional array from pooled featured map into a single dimensional long continuous vector. 
+
+in general this output of flatten layer is carried to a fully connected layer which consists of input, hiden and output layers. for that purpose we are adding the dense layer to our model. dense layer is a simple layer of neurons in which each neuron receivs input from all the neurons of previous layer. 
+here two activation functions are used relu and sigmoid. relu is the best activation function used for hidden layers. and sigmoid activation function is used for classification purpose in the output latyer. here the activation function means it determines the output  of node from the given input to the node.
+
+Next, we need to compile our model. Compiling the model takes three parameters: optimizer, loss and metrics.
+The optimizer controls the learning rate. We will be using ‘adam’ as our optmizer. Adam is generally a good optimizer to use for many cases. The adam optimizer adjusts the learning rate throughout training.
+The learning rate determines how fast the optimal weights for the model are calculated.
+
+We will use ‘Binary cross entropy’ for our loss function.Binary cross entropy compares each of the predicted probabilities to actual class output which can be either 0 or 1. To make things even easier to interpret, we will use the ‘accuracy’ metric to see the accuracy score on the validation set when we train the model.
+
+Now we will train our model. To train, we will use the ‘fit()’ function on our model with the following parameters: training data (x_train),steps per epoch, validation data,  number of epochs are 100 and validation steps.
+here epoch means when an entire dataset is passed forward and backward through the neural network only once. here we use multiple number of epochs because passing the entire dataset through a neural network is not enough hence we use multiple epochs. For our validation data, we will use the test set provided to us in our dataset.
+
+steps per epoch is determined by Floor divisioning the training data size to the batch size. validation steps is determined by Floor divisioning the testing data size to the batch size. batch size means the number of training examples in each iteration for an epoch.
+
+when we run the line of code we can see that we can get 100 percent accuracy.
+
+now with no delay we are sving our model into a h5 file. H5 file stands for Hierarchical Data Format 5. It is an open-source file which comes in handy to store large amount of data. As the name suggests, it stores data in a hierarchical structure within a single file.
+
+now importing required models from required libraries and importing numpy module as np. by using these moules we can load the model from h5 file where we have previously stored our model. now for checking we load two images of class 0 and class 1. firstly i'm giving class 1 image with target size 32 and 32. and converting this image to arry and further predicting it. we can see that array of 1 that is it is predicting as class 1 and similarly when we give another image of class 0 we can see that the prediction is 0.
+
+this is the prediction generated in the google colaboratory, in the samw ay the same code is given in ibm watson studio as per the mini project requirement. 
+
+
+
+
+
+here is the code which is predicted in ibm watson studio. for that we have uploaded the zipped datset and accesed using streaming body and unzipping the file. and the reamining process continues same as we discussed before in google colaboratory.
+
+next part of the code is flask deployment in python. this is further explained my team mate poshala sai deepak.
+
+
+
+
+
+
+
+sai deepak python code
+
+
+hi myself poshala sai deepak currently pursuing my undergraduation in the stream of computer science engineering department, final year at vaagdevi engineering college in warangal.
+
+now i'm going to explain the flask deployment in python.
+
+firstly import the required libraries and modules such as flask, render_template, request, numpy load_model from keras and tensorflow, preprocess_input from keras.applications and os also imported.
+
+create a new app for running process.
+next a decorator using app is created which converts into route
+index function is declared which is returning the render_template to index html page
+
+
+upload function is declared which is taking an if condition describing the request.method == post the the further lines of code
+taking afile by requesting, and giving the file to the filename variable.
+filepath is taken by using the os. path. join, which is the the filename into user uploads.
+and saving the filepath.
+
+next the model is loaded from h5 file, converted to the array with the filepath which i staken from above with target size 32 by 32
+next preprocess the image, and predict the image using model module and assign to classes variable. converting the classes into int and storing it into result.
+
+now if result=0 then return the output "tumor is benign... need not worry" to the predict html by render_template
+else if result=1 then returns the output as " it is malignant tumor.. please consult doctor" to predict html by render_template.
+
+
+finally this piece of code is the key part of runnning python with flask.
+
+now let's understand the html code which is described in python file. this html code is further explained my team mate sudeepa.
+
+
+
+
+
+
+
+
+Sudeepa html codes.
+
+
+hi myself thouti reddy sudeepa currently pursuing my undergraduation in the stream of computer science engineering department, final year at vaagdevi engineering college in warangal.
+
+now i'm going to explain the html pages 
+first html page is index.html
+html head and body tags are the main tags of html
+in the body tags some styling the webpage is performed based on the id and classses declared in the below tags such as div and input tags.
+
+for body tag the styling is performed with attributes such as declaring backgrund image, background repeat as no repeat, background attachment as fixed and background size is 100% as height width.
+
+next, for col-sm class, the text is aligned as center
+
+next, for class badge-badge-danger the styling attributes declared are paddin, margin, background color, colr, font-size, and font family
+
+next, for right class top margin is declared
+
+next, for class text attributes declared are background-color, border-radius, padding-left, padding-right, padding-top, padding-bottom, margin-left, margin-right, color, height, width, font-size and font-family
+
+next, for class inps attributes declared are border, color, and margin-left.
+
+finally, for class inp attributes declared are background, border, border-radius, width, height, font-size, color are used.
+
+classes such as col-sm, badge-badge-danger, right and text are used in division tag. 
+
+badge-badge-danger is the heading1 describes the heading breast cancer prediction
+
+text class in div tag with h2 tag is describing the content about breast cancer prediction
+
+br tag is usd for break in webpage
+
+form tag is used to link with predict html page with attribute action.
+
+in the first input tag the type is taken as file and name is given as file
+
+in the second input tag the type is taken as submit and value is taken as upload.
+
+finally, the div , body and html tags are closed 
+
+
+
+
+
+next html page is predict.html 
+
+as explained in index html page in this page also style tag is declared in body for  styling the tags using classes and id's in div and paragraph tag
+
+for body tag the styling is performed with attributes such as declaring backgrund image, background repeat as no repeat, background attachment as fixed and background size is cover.
+
+next, for bg-dark class, the background colur is declared
+
+next, for badge-badge-secondary, the attributes declared are padding, margin, background-color, color, font-size, font-family and text-align.
+
+next, for class right attributes declared are margin-left, margin-right, margin-top, padding, pading-top, colr, height, width, font-size, font-family, background-color, border-radius, and display.
+
+next, for class left attributes declared are margin-left, margin-top, and display
+
+for id result, color is declared
+
+style tag is closed
+
+in div tag of class badge-badge-secondary the h1 tag is declared describing the breast cancer prediction.
+div tag is closed
+
+and paragraph tag is opened with class left which is describing the prediction text which will show the information given from python file.
+
+in the next div tag with class right, next div tag is declared with h2 tag describing the content of breast cancer.
+
+finally closing the div, body and html tags.
+
+in this way the html pages will describe the webpages.
+
+
+next the webpages that is the output is explained by team member divya
+
+
+
+
+
+divya output explanation
+
+
+
+
+hi myself V. divya currently pursuing my undergraduation in the stream of computer science engineering department, final year at vaagdevi engineering college in warangal.
+
+now i'm going to explain the output generation in the webpage of our project by running the python file.
+
+after constructing the python and html codes. we will be running the python code using the base environment from anaconda navigator, base environment is the default environment created while installing the anaconda application.
+
+
+now enter the command of python execution. 
+
+after entering this command for python execution. press enter.
+
+an port id is genearted like this. just by pressing control select the link. you will be automatically redirected to the webpage. 
+
+as you can see a webpage is opened with a number of styles such as background image, content with colourfully and some buttons for choosing file and upload button for prediction.
+
+now i'm going to choose a file from my user_uploads, i'm selecting a malignant image and then pressing on the upload button.
+
+now you can see an webpage with is redirected from previous webpage.
+
+here we can see that out image is predicted as malignant tumor and advising to consult a doctor.
+
+in the similar way we can select a benign image and press the upload button. so that benign tumor also predicted. let's see the process of benign prediction.
+
+i'm selecting the back button, now i'm again choosing the benign image, and then clicking the upload button. see again the new webpage is generated from previous one describing the tumor is benign and need not to worry.
+
+this is the process of displaying the output of breast cancer prediction using python, and html code. hence we have succesfully predicted the risk and type of breast cancer. 
+
+thank you.....
+
